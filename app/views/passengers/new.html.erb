@@ -1,0 +1,15 @@
+<h1>New Passenger</h1>
+
+<%= form_for :passenger, url: flight_passengers_path do |f| %>
+  <p>
+    <%= f.label :name %> <br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :passport %> <br>
+    <%= f.number_field :passport %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>  

@@ -20,4 +20,10 @@
   <%= @flight.arrival.date %>
 </p>
 
-<%= link_to 'Back', flights_path %>
+<p>
+  <%= link_to 'Show passengers', flight_passengers_path(@flight) %>
+</p>
+
+<p>
+  <%= link_to 'Back', flights_path %>
+</p>

@@ -1,0 +1,18 @@
+<h1>Showing Passengers</h1>
+
+<p><%= link_to 'New passenger', new_flight_passenger_path %></p>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Passport</th>
+  </tr>
+  <% @flight.passengers.each do |passenger| %>
+    <tr>
+      <td><%= passenger.name %></td>
+      <td><%= passenger.passport %></td>
+    </tr>
+  <% end %>  
+</table>
+
+<%= link_to 'Back', flight_path(@flight) %>
