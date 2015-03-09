@@ -1,0 +1,45 @@
+<%= form_for @flight do |f| %> 
+  <p>
+    <%= f.label :number %>
+    <%= f.number_field :number %>
+  </p>
+
+  <hr>  
+
+  <h4>Departure:</h4>
+
+  <%= f.fields_for :departure do |builder| %>
+    <p>
+      <%= builder.label :status %> <br>
+      <%= builder.select :status, options_for_select(Departure.statuses.keys) %>
+    </p>
+    <p>
+      <%= builder.label :date %> <br>
+      <%= builder.datetime_select :date %>
+    </p>
+  <% end %>
+
+  <hr>
+
+  <h4>Arrival:</h4>
+
+  <%= f.fields_for :arrival do |builder| %>
+    <p>
+      <%= builder.label :status %> <br>
+      <%= builder.select :status, options_for_select(Arrival.statuses.keys) %>
+    </p>
+    <p>
+      <%= builder.label :date %> <br>
+      <%= builder.datetime_select :date %>
+    </p>
+  <% end %>
+
+  <hr> 
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>
+
+<%= link_to 'Back', flights_path %>

@@ -1,0 +1,51 @@
+<h1>Listing Flights</h1>
+<p>
+  <%= link_to 'New flight', new_flight_path %>
+</p>
+
+<% @flights.each do |flight| %>
+<div class="panel panel-default">
+
+  <div class="panel-heading">
+    <h4>Flight Number <%= flight.number%> - <%= flight.airline.name %>
+      <span>
+        <%= link_to edit_flight_path(flight) do %>
+        <i class="glyphicon glyphicon-edit"></i>
+        <% end %>
+        <%= link_to flight_path(flight) , method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="glyphicon glyphicon-trash"></i>
+        <% end %>
+      </span>
+    </h4>   
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel-heading"><h5>Departure</h5></div>
+      <table class="table">
+        <tr>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td><%= flight.departure.date %></td>
+          <td><%= flight.departure.status %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <div class="panel-heading"><h5>Arrival</h5></div>
+      <table class="table">
+        <tr>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td><%= flight.arrival.date %></td>
+          <td><%= flight.arrival.status %></td>
+        </tr>
+      </table>
+    </div>
+  </div>  
+</div>
+<% end %>

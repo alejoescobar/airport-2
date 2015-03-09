@@ -1,0 +1,23 @@
+<h1>Showing Flight</h1>
+
+<p>
+  <strong>Airline:</strong>
+  <%= @flight.airline.name %>
+</p>
+
+<p>
+  <strong>Flight Number:</strong>
+  <%= @flight.number %>
+</p>
+
+<p>
+  <strong>Departure Time:</strong>
+  <%= @flight.departure.date %>
+</p>
+
+<p>
+  <strong>Arrival Time:</strong>
+  <%= @flight.arrival.date %>
+</p>
+
+<%= link_to 'Back', flights_path %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  flight: 
+  date: 2015-03-09 09:45:40
+  status: 1
+
+two:
+  flight: 
+  date: 2015-03-09 09:45:40
+  status: 1
